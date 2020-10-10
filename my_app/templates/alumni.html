@@ -8,12 +8,12 @@
     <title>Hello!</title>
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
-
+    <!-- <link rel="stylesheet" href="/style.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
-
-    <script src="/p5.js"></script>
+    <!-- <script src="/script.js" defer></script>
+    <script src="/p5.js"></script> -->
   </head>
   <body>
     <header class="topnav">
