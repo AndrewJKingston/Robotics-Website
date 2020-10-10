@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.1.4/lib/p5.min.js"></script> 
+    <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.1.4/lib/addons/p5.sound.min.js"></script>
+    <script language="javascript" type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    <title>Selfocus - {% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+
+  <header class="topnav">
+    <img
+        src="https://cdn.glitch.com/3ab057db-f8fe-4015-bbd0-72c10fc18fee%2Fthumbnails%2FPHSRoboticsLogo-removebg-preview.png?1597353011121"
+        alt="logo"
+    />
+    <span id="navbar">
+        <a class="active" href="index.html"><b>Home</b></a>
+        <div class="dropdown">
+            <button class="dropbtn"><b>Teams</b></button>
+            <div class="dropdown-content">
+            <a href="adders.html">13586 Adders</a>
+            <a href="pithons.html">12393 Pithons</a>
+            <a href="diamondbacks.html">12394 Diamondbacks</a>
+            <a href="diamonds.html">15205 Diamonds</a>
+            </div>
+        </div>
+        <a href="outreach.html"><b>Outreach</b></a>
+        <a href="officers.html"><b>Officers & Mentors</b></a>
+        <a href="blog.html"><b>Blog</b></a>
+        <a href="alumni.html"><b>Alumni</b></a>
+    </span>
+
+    <div id="socials">
+      <a href="https://www.instagram.com/pioneer.robotics.club/?hl=en"
+        ><img
+          src="https://cdn.glitch.com/3ab057db-f8fe-4015-bbd0-72c10fc18fee%2Fthumbnails%2FInstagramLogo.png?1597355070808"
+          style="width:28px;height:28px;"
+      /></a>
+      <a href="https://twitter.com/PioneerRobots"
+        ><img
+          src="https://cdn.glitch.com/3ab057db-f8fe-4015-bbd0-72c10fc18fee%2Fthumbnails%2FTwitterLogo.png?1597355106767"
+          style="width:28px;height:28px;"
+      /></a>
+    </div>
+  </header>
+    <section class="content">
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+        {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+        {% block content %}{% endblock %}
+    </section>
+
+    <body>
+        {% block body %}{% endblock %}
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    </body>
+</html>
